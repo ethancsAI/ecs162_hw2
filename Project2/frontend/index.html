@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+	<title>The New York Times</title>
+	<script>
+		function todayDate() {
+			let months = [ "January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"]; // array of months
+			let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; // array of days
+			let today = new Date();
+			let dayName = days[today.getDay()];   // built in js functions
+			let monthName = months[today.getMonth()]; 
+			let dayNum = today.getDate();        
+			let year = today.getFullYear();   
+			let date = dayName + ", " + monthName + " " + dayNum + ", " + year; // format them
+			let dateId = document.querySelector(".date"); // get id
+			if (document.querySelector(".date")) dateId.textContent = date;
+		}
+		function makeRequest() {
+			fetch('https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=NLoBQZiM2qmf6XtMkOAJSwE8MAGJ46K2')
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Network response error');  
+					}
+					return response.json();
+				})
+				.then(data => {
+					console.log('test')
+					console.log(data);
+				})
+				.catch(error => {
+					console.error('Fetch error:', error);
+				});
+		}
+		window.onload = (event) => { // when page is loaded then display date
+			todayDate();
+		};
+	</script>
+</head>
+<body>
+    <header> <!-- header where the logos and dates are and this is separate from the actual article contents-->
+		<div class="logo">
+            <img src="images/logo.png" alt="logo" >
+        </div>
+        <p class="date"></p>
+		<p class="paper">Today's Paper</p>
+    </header>
+
+    <main> <!-- where all the article contents go-->
+        <div class="grid-container"> <!-- went with a grid container to get columns-->
+            <div id="item1"> 
+                <section> <!-- each section is its own article-->
+                    <img src="images/cat2.jpg" alt="cat 2" class="responsive-img">
+                    <h2>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua</h2> 
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </section>
+				<section>
+					<!-- <img src="images/cat1.jpg" alt="image" class="responsive-img"> -->
+                    <h2>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</section>
+            </div>
+
+            <div id="item2">
+				<section>
+					<h2>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Pretium tellus duis convallis tempus leo eu aenean. Iaculis massa nisl malesuada lacinia integer nunc posuere. Conubia nostra inceptos himenaeos orci varius natoque penatibus. Nulla molestie mattis scelerisque maximus eget fermentum odio. Blandit quis suspendisse aliquet nisi sodales consequat magna. Ligula congue sollicitudin erat viverra ac tincidunt nam. Velit aliquam imperdiet mollis nullam volutpat porttitor ullamcorper. Dui felis venenatis ultrices proin libero feugiat tristique. Cubilia curae hac habitasse platea dictumst lorem ipsum. Sem placerat in id cursus mi pretium tellus. Fringilla lacus nec metus bibendum egestas iaculis massa. Taciti sociosqu ad litora torquent per conubia nostra. </p>
+					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<!-- <img src="images/image2.jpg" alt="img2" class="responsive-img"> -->
+				</section>
+				<section>
+					<img src="images/cat1.jpg" alt="cat 1" class="responsive-img">
+					<h2>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</section>
+                
+            </div>
+            
+            <div id="item3">
+                <section>
+                    <img src="images/image2.jpg" alt="image of space" class="responsive-img">
+                    <h2>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </section>
+				<section>
+					<!-- <img src="images/image1.avif" alt="image" class="responsive-img"> -->
+                    <h2>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>
+
+<!-- 
+How to make dynamic date change in JS: https://stackoverflow.com/questions/4904667/html-how-do-i-insert-dynamic-date-in-webpage
+Media Queries: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+Website load JS: https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
+IMG tag: https://www.w3schools.com/tags/tag_img.asp
+CSS margins: https://www.w3schools.com/css/css_margin.asp
+CSS Borders: https://www.w3schools.com/css/css_border.asp
+Discussion Week 3 Slides: how to remove last child of border
+Responsive images: https://www.w3schools.com/howto/howto_css_image_responsive.asp
+CSS grid containers: https://www.w3schools.com/css/css_grid_container.asp
+CSS flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+CSS height, width, max height: https://www.w3schools.com/css/css_dimension.asp
+CSS padding: https://www.w3schools.com/css/css_padding.asp
+-->

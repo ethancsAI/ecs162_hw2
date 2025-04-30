@@ -1,0 +1,1 @@
+No AI has been used on this project, all of it was mostly done through W3Schools, discussion slides, stackoverflow and more in my documentation in the index.html.
