@@ -18,4 +18,13 @@ export default defineConfig(({ mode }) => ({
       },
     },
   } : undefined,
-}))
+  test: {
+    environment: 'jsdom',
+    globals: true,
+  },
+  resolve: process.env.VITEST
+    ? {
+        conditions: ['browser']
+      }
+    : undefined
+}));

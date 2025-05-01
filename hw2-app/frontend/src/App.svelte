@@ -37,7 +37,7 @@
   <div class="grid-container">
     {#each articles as article}
       <section class="article-card">
-        {#if article.multimedia.default && article.multimedia.default.url}
+        {#if article.multimedia?.default?.url}
           <img
             src={article.multimedia.default.url} 
             alt={article.headline.main}x
