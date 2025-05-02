@@ -17,3 +17,12 @@ Some preqs that we had is
 2. In the project root dir (hw2-app dir, therefore in neither frontend or backend folder), run the following command, docker-compose -f docker-compose.prod.yml up --build
 3. Open your browser to http://localhost:8000
 
+## Running the Unit Tests
+- Make sure your are in the ```frontend``` directory
+- Run the following commands:
+```
+npm install -D vitest
+npm install -D jsdom
+npm install -D @testing-library/svelte
+```
+- To run the actual tests: ```npm run test```
