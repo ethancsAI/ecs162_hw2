@@ -1,0 +1,9 @@
+Course Assist
+1. Used Course Assist
+2. We used it to help us plan out how to tackle the assignment. We asked it to make a high level overview for doing the assignment. We also asked clarifying questions about aspects of the assignments, especially related to flask/svelte, docker, and api calls.
+3. It helped us a decent amount. It was helpful more at the beginning when we were confused and trying to figure out all the moving parts of the problem. It was pretty accurate and helpful.
+
+Claude
+1. Used Claude
+2. We mainly used claude to help us figure out how to implement all of the moving parts of the project. We first tried to use it to figure out how to do flask. However, after many hours of not being sucessful, we ended up using svelte. We asked it questions related on how we could implement the tasks that were specified by Course Assist. For unit testing, we asked it questions on how to set up unit testing and ideas on implementation. We used it extensively for debugging. Additionally, we also asked it conceptual questions related to the project. 
+3. It was very helpful. With implementation, it was not very accurate in getting a working solution. It would also try to change my code majorly when we just wanted to change a smaller section. We used in an interative way where we get an implementation that was not correct and interatively debug along with claude. With concept questions, it was pretty accurate and discussed topics in a more approachable manner.
