@@ -1,3 +1,6 @@
+# GitHub Link if any issues occur:
+https://github.com/ethancsAI/ecs162_hw2
+
 # Production Mode Setup Guide
 
 This project uses **Svelte** for the frontend and is configured to run in **production mode** using **Docker**. Below are the steps to get the application up and running in a production environment.
