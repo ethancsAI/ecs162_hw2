@@ -18,7 +18,7 @@
       const nytData = await nytRes.json();
       const docs = nytData?.response?.docs;
       if (Array.isArray(docs)) {
-        articles = docs;
+        articles = docs.slice(0, 6);
       }
     } catch (error) {
       console.error('Failed to fetch API key:', error);
