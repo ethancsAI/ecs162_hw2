@@ -14,6 +14,6 @@ Some preqs that we had is
 ## Running in Production Mode
 
 1. Make sure Docker application is running while having the project open
-2. In the project root dir (therefore in neither frontend or backend folder), run the following command, docker-compose -f docker-compose.prod.yml up --build
+2. In the project root dir (hw2-app dir, therefore in neither frontend or backend folder), run the following command, docker-compose -f docker-compose.prod.yml up --build
 3. Open your browser to http://localhost:8000
 
